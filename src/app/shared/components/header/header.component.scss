@@ -1,0 +1,40 @@
+.header-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  .menu-btn {
+    display: none;
+    margin-right: 8px;
+  }
+
+  .app-name {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .menu-btn {
+      display: inline-flex;
+      background-color: transparent;
+      border: none;
+    }
+
+    .app-name {
+      font-size: 14px;
+    }
+
+    .logo {
+      max-width: 60%;
+      object-fit: contain;
+    }
+  }
+}
