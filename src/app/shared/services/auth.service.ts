@@ -1,18 +1,16 @@
 import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   router = inject(Router)
-
-  isLoggedIn(): boolean {
-    return localStorage.getItem('loggedIn') === 'true';
-  }
+  storage = inject(LocalStorageService);
 
   logout() {
-    localStorage.removeItem('loggedIn');
+    this.storage.logout();
     this.router.navigate(['/login']);
   }
 

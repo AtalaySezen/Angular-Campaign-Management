@@ -8,7 +8,8 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Kullanıcı Adı</mat-label>
                     <input matInput formControlName="username" required>
-                    <mat-error *ngIf="username.invalid && (username.touched || username.dirty)">
+                    <mat-error
+                        *ngIf="this.loginForm.get('username')?.invalid && (this.loginForm.get('username')?.touched || this.loginForm.get('username')?.dirty)">
                         <span *ngIf="this.loginForm.get('username')?.hasError('required')">Kullanıcı adı
                             zorunludur.</span>
                         <span *ngIf="this.loginForm.get('username')?.hasError('minlength')">En az 3 karakter
@@ -18,7 +19,8 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Şifre</mat-label>
                     <input matInput type="password" formControlName="password" required>
-                    <mat-error *ngIf="password.invalid && (password.touched || password.dirty)">
+                    <mat-error
+                        *ngIf="this.loginForm.get('password')?.invalid && (this.loginForm.get('password')?.touched || this.loginForm.get('password')?.dirty)">
                         <span *ngIf="this.loginForm.get('password')?.hasError('required')">Şifre zorunludur.</span>
                         <span *ngIf="this.loginForm.get('password')?.hasError('minlength')">En az 3 karakter
                             giriniz.</span>
