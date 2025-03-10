@@ -1,1 +1,33 @@
-<p>login works!</p>
+<div class="login-container">
+    <mat-card class="login-card">
+        <mat-card-header>
+            <img class="logo" height="40" width="383" src="images/login-moneytolia.svg" alt="Moneytolia Logo" />
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <mat-form-field appearance="fill">
+                    <mat-label>Kullanıcı Adı</mat-label>
+                    <input matInput formControlName="username" required>
+                    <mat-error *ngIf="username.invalid && (username.touched || username.dirty)">
+                        <span *ngIf="this.loginForm.get('username')?.hasError('required')">Kullanıcı adı
+                            zorunludur.</span>
+                        <span *ngIf="this.loginForm.get('username')?.hasError('minlength')">En az 3 karakter
+                            giriniz.</span>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Şifre</mat-label>
+                    <input matInput type="password" formControlName="password" required>
+                    <mat-error *ngIf="password.invalid && (password.touched || password.dirty)">
+                        <span *ngIf="this.loginForm.get('password')?.hasError('required')">Şifre zorunludur.</span>
+                        <span *ngIf="this.loginForm.get('password')?.hasError('minlength')">En az 3 karakter
+                            giriniz.</span>
+                    </mat-error>
+                </mat-form-field>
+                <button mat-raised-button color="primary" type="submit">
+                    Giriş Yap
+                </button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
