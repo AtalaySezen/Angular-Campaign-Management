@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     password: ['123456', [Validators.required, Validators.minLength(3)]]
   });
   mockUser = {
-    username: 'testuser',
+    username: 'admin',
     password: '123456'
   };
 
