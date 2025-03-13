@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   storage = inject(LocalStorageService);
   snackbar = inject(SnackbarService);
   loginForm = inject(FormBuilder).group({
-    username: ['testuser', [Validators.required, Validators.minLength(3)]],
+    username: ['admin', [Validators.required, Validators.minLength(3)]],
     password: ['123456', [Validators.required, Validators.minLength(3)]]
   });
   mockUser = {
