@@ -6,10 +6,11 @@ import { CampaignEditDialogComponent } from './campaign-edit-dialog/campaign-edi
 import { MatDialog } from '@angular/material/dialog';
 import { SnackbarService } from '../../shared/services/snackbar.service';
 import { MatIconModule } from '@angular/material/icon';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-campaign-list',
-  imports: [MatTableModule, MatIconModule],
+  imports: [MatTableModule, MatIconModule, DatePipe],
   templateUrl: './campaign-list.component.html',
   styleUrl: './campaign-list.component.scss',
 })
