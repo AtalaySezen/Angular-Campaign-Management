@@ -12,7 +12,6 @@ import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-campaign-edit-dialog',
-  standalone: true,
   imports: [
     ReactiveFormsModule,
     MatFormFieldModule,
@@ -25,7 +24,7 @@ import { MatButtonModule } from '@angular/material/button';
 export class CampaignEditDialogComponent {
   editForm: FormGroup;
   fb = inject(FormBuilder);
-  
+
   constructor(
     private dialogRef: MatDialogRef<CampaignEditDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any

@@ -1,1 +1,21 @@
-<p>campaign-create works!</p>
+<div class="create-campaign-container">
+  <form [formGroup]="campaignForm" class="campaign-form">
+    <mat-form-field style="width: 100%;">
+      <mat-label>Kampanya Başlığı</mat-label>
+      <input matInput formControlName="title">
+      <mat-error *ngIf="campaignForm.get('title')?.hasError('required')">
+        Başlık zorunludur.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field style="width: 100%;">
+      <mat-label>Kampanya Açıklaması</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+      <mat-error *ngIf="campaignForm.get('description')?.hasError('required')">
+        Açıklama zorunludur.
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="btn" (click)="submitCampaign()" [disabled]="campaignForm.invalid">
+      Kaydet
+    </button>
+  </form>
+</div>
