@@ -57,11 +57,9 @@ export class CampaignCreateComponent {
         this.localStorageService.get<Campaign[]>(this.storageKey) || [];
       campaigns.push(newCampaign);
       this.localStorageService.set(this.storageKey, campaigns);
-
       this.snackBar.success('Kampanya başarıyla oluşturuldu', 2000);
       this.campaignForm.reset();
-      this.campaignForm.markAsPristine();
-      this.campaignForm.markAsUntouched();
+      this.router.navigate(['campaign-list']);
     }
   }
 }
