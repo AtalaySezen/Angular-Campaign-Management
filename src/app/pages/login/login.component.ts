@@ -43,7 +43,6 @@ export class LoginComponent implements OnInit {
       this.snackbar.error('Lütfen bilgilerinizi kontrol edin.');
       return;
     }
-
     const { username, password } = this.loginForm.value;
 
     if (username === this.mockUser.username && password === this.mockUser.password) {

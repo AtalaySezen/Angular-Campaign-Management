@@ -13,5 +13,4 @@ export class AuthService {
     this.storage.logout();
     this.router.navigate(['/login']);
   }
-
 }

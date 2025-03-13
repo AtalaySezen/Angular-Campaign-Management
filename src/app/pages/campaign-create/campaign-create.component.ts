@@ -13,7 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { SnackbarService } from '../../shared/services/snackbar.service';
 import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
-import { Campaign } from '../../shared/models/model'; 
+import { Campaign } from '../../shared/models/model';
 
 @Component({
   selector: 'app-campaign-create',
@@ -46,7 +46,7 @@ export class CampaignCreateComponent {
   submitCampaign(): void {
     if (this.campaignForm.valid) {
       const newCampaign: Campaign = {
-        id: Date.now() + Math.floor(Math.random() * 1000), 
+        id: Date.now() + Math.floor(Math.random() * 1000),
         title: this.campaignForm.value.title,
         description: this.campaignForm.value.description,
         points: 0,

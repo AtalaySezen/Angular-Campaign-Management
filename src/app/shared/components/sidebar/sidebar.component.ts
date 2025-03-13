@@ -25,5 +25,4 @@ export class SidebarComponent {
     this.router.navigate(['/login']);
     this.menuClicked.emit();
   }
-
 }
