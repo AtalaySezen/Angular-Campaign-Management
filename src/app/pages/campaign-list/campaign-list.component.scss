@@ -7,4 +7,19 @@
         border: none;
         cursor: pointer;
     }
+    .points-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px; 
+      }
+      
+      .btn-mini {
+        min-width: 32px;  
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+      }
 }

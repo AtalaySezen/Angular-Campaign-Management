@@ -15,13 +15,15 @@
     <ng-container matColumnDef="points">
       <th mat-header-cell *matHeaderCellDef>Puan</th>
       <td mat-cell *matCellDef="let campaign">
-        <button mat-mini-button color="warn" (click)="changePoints(campaign, -1)">
-          -
-        </button>
-        {{ campaign.points }}
-        <button mat-mini-button color="primary" (click)="changePoints(campaign, 1)">
-          +
-        </button>
+        <div class="points-container">
+          <button mat-mini-button color="warn" class="btn btn-mini" (click)="changePoints(campaign, -1)">
+            <mat-icon>arrow_drop_down</mat-icon>
+          </button>
+          <span>{{ campaign.points }}</span>
+          <button mat-mini-button class="btn btn-mini" color="primary" (click)="changePoints(campaign, 1)">
+            <mat-icon>arrow_drop_up</mat-icon>
+          </button>
+        </div>
       </td>
     </ng-container>
     <ng-container matColumnDef="date">

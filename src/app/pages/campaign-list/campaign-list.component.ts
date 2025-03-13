@@ -28,11 +28,12 @@ export class CampaignListComponent {
   }
 
   loadCampaigns(): void {
-    this.dataSource = this.getCampaigns();
+    this.dataSource = [...this.getCampaigns()];
   }
 
   getCampaigns(): Campaign[] {
-    return this.localStorageService.get<Campaign[]>(this.storageKey) || [];
+    const campaigns = this.localStorageService.get<Campaign[]>(this.storageKey);
+    return Array.isArray(campaigns) ? campaigns : [];
   }
 
   changePoints(campaign: Campaign, delta: number): void {
